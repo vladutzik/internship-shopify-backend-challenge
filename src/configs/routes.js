@@ -1,6 +1,6 @@
 export default {
   menu: {
     index: '/menu',
-  validate: '/validate',
+    validate: '/:menuId/validate',
   },
 };
