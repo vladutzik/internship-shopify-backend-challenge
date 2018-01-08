@@ -9,7 +9,11 @@ import api from './controllers/api';
 import config from './config.json';
 
 let app = express();
-app.server = http.createServer(app);
+if (process.env.NODE_ENV === 'production') {
+	app.server = https.createServer({}, app);
+} else {
+	app.server = http.createServer(app);
+}
 
 // logger
 app.use(morgan('dev'));
@@ -28,7 +32,5 @@ app.use('/api', api());
 app.server.listen(process.env.PORT || config.port, () => {
 	console.log(`Started on port ${app.server.address().port}`);
 });
-
-console.log(process.env.NODE_ENV);
 
 export default app;
