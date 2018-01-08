@@ -1,4 +1,5 @@
 import http from 'http';
+import https from 'https';
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -27,5 +28,7 @@ app.use('/api', api());
 app.server.listen(process.env.PORT || config.port, () => {
 	console.log(`Started on port ${app.server.address().port}`);
 });
+
+console.log(process.env.NODE_ENV);
 
 export default app;
