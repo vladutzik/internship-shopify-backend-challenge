@@ -1,5 +1,4 @@
 import http from 'http';
-import https from 'https';
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -9,14 +8,12 @@ import api from './controllers/api';
 import config from './config.json';
 
 let app = express();
-if (process.env.NODE_ENV === 'production') {
-	app.server = https.createServer({}, app);
-} else {
-	app.server = http.createServer(app);
-}
-
+app.server = http.createServer(app);
+app.enable('trust proxy')
 // logger
-app.use(morgan('dev'));
+if (process.env.NODE_ENV !== 'production') {
+	app.use(morgan('dev'));
+}
 
 // 3rd party middleware
 app.use(cors({
