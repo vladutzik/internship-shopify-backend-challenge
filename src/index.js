@@ -4,7 +4,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 
-import api from './controllers/api';
+import Routes from './routes';
 import config from './config.json';
 
 let app = express();
@@ -24,7 +24,7 @@ app.use(bodyParser.json({
 	limit : config.bodyLimit
 }));
 
-app.use('/api', api());
+app.use('/', Routes);
 
 app.server.listen(process.env.PORT || config.port, () => {
 	console.log(`Started on port ${app.server.address().port}`);
