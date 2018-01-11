@@ -1,57 +1,18 @@
-Express & ES6 REST API Boilerplate
+Shopify internship 2018 - Backend challenge
 ==================================
 
-This is a straightforward boilerplate for building REST APIs with ES6 and Express.
+Test it on your local machine
 
-- ES6 support via [babel](https://babeljs.io)
-- REST resources as middleware via [resource-router-middleware](https://github.com/developit/resource-router-middleware)
-- CORS support via [cors](https://github.com/troygoode/node-cors)
-- Body Parsing via [body-parser](https://github.com/expressjs/body-parser)
+1. `mkdir project_name`
+2. `cd project_name`
+3. `git clone https://github.com/vladutzik/internship-shopify-backend-challenge.git .`  
+4. `docker-compose up`
 
-> Tip: If you are using [Mongoose](https://github.com/Automattic/mongoose), you can automatically expose your Models as REST resources using [restful-mongoose](https://git.io/restful-mongoose).
+##### If you do not have docke or docker-compose please follow the instructions [HERE](https://docs.docker.com/compose/install/)
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/WbARjbDRQz5y3N6VBEMPU4LW/developit/express-es6-rest-api'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/WbARjbDRQz5y3N6VBEMPU4LW/developit/express-es6-rest-api.svg' />
-</a>
+Now application should run on port 8080.
 
-Getting Started
----------------
-
-```sh
-# clone it
-git clone git@github.com:developit/express-es6-rest-api.git
-cd express-es6-rest-api
-
-# Make it your own
-rm -rf .git && git init && npm init
-
-# Install dependencies
-npm install
-
-# Start development live-reload server
-PORT=8080 npm run dev
-
-# Start production server:
-PORT=8080 npm start
-```
-Docker Support
-------
-```sh
-cd express-es6-rest-api
-
-# Build your docker
-docker build -t es6/api-service .
-#            ^      ^           ^
-#          tag  tag name      Dockerfile location
-
-# run your docker
-docker run -p 8080:8080 es6/api-service
-#                 ^            ^
-#          bind the port    container tag
-#          to your host
-#          machine port   
-
-```
+[ONLINE DEMO](https://shopify-internship-backend.herokuapp.com/)
 
 License
 -------

@@ -8,6 +8,7 @@ import Routes from './routes';
 import config from './config.json';
 
 let app = express();
+app.use(express.static(__dirname + '/src/templates'));
 app.server = http.createServer(app);
 app.enable('trust proxy')
 // logger
